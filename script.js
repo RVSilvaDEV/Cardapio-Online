@@ -156,7 +156,9 @@ if(inputValue !== ""){
 
 checkoutBtn.addEventListener("click", function(){
 
-    const isOpen = checkOpen();
+    //Checagem para saber se a Hamburgueria está aberta ou não, caso não esteja não sera possivel fazer o pedido!! (Está desabilitado para testes fora do horario estabelecido)
+    
+    /* const isOpen = checkOpen();
     if(!isOpen){
         
         Toastify({text:"O restaurante está fechado no momento!",
@@ -171,7 +173,7 @@ checkoutBtn.addEventListener("click", function(){
            
         }).showToast();
         return;
-    } 
+    } */
 
     if(cart.length === 0) return;
 if(addressInput.value === ""){
@@ -198,8 +200,7 @@ if(addressInput.value === ""){
 })
 
 
-
- function checkOpen(){
+function checkOpen(){
     const data = new Date ();
     const hora = data.getHours();
     return hora >= 18 && hora >= 22;
@@ -213,5 +214,5 @@ if(isOpen){
     spanItem.classList.add("bg-green-600")
 } else {
     spanItem.classList.remove("bg-green-600")
-    spanItem.classList.add("bg-red-500")
+    spanItem.classList.add("bg-red-500") 
 } 
